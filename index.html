@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- fontawesome -->
+    <link href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!--
+    ToDo:
+    見本のwithdrawページのinputタグに数値を入力し、完成物の挙動を確認してください。
+    各inputに値が入力される度に金額と掛け合わされた総額がtotalのboxに表示されるように処理を実装してください。
+    data-billを持つ要素、文字列data-billを受け取り、合計金額を計算するbillSummationという関数を作成してください。
+    各要素にはdata-billというdata属性がついており、$100、$50のような値がすでに設定されています。(appendしているHTMLを参照ください。)
+-->
+
+    <!-- 1ページ目 -->
+    <div class="vh-100 bg-dark d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex align-items-center col-md-7 col-10">
+            <div id="initial-form" class="bg-white col-12 text-center p-4">
+                <h2 class="pb-3">Please type your information below</h2>
+                <form id="bank-form" class="form" onsubmit="initializeUserAccount(); event.preventDefault()">
+                    <div class="form-group">
+                        <input type="email" name="userEmail" class="form-control" placeholder="Email"
+                            value="fdsfdsf@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="userFirstName" class="form-control" placeholder="First name"
+                            value="fdsfdsf" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="userLastName" class="form-control" placeholder="Last name"
+                            value="fdsfdsf" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="userFirstDeposit" aria-describedby="emailHelp"
+                            placeholder="Enter your first deposit" value="20" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="userAccountType" id="userAccountType1"
+                                value="savings" checked required>
+                            <label class="form-check-label" for="userAccountType1">
+                                Savings
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="userAccountType" id="userAccountType2"
+                                value="checkings" required>
+                            <label class="form-check-label" for="userAccountType2">
+                                Checkings
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary col-12">Submit</button>
+                </form>
+            </div>
+            <!-- 2ページ目の枠 -->
+            <div id="bankPage" class="bg-green col-12 text-center text-white">
+            </div>
+            <!-- menu先のページ -->
+            <div id="sidePage" class="bg-white col-12 text-center">
+            </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
